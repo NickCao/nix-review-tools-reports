@@ -3,8 +3,8 @@ description: >-
   Automatically generated reports for Hydra jobsets using `nix-review-tools`.
   Updated hourly.
 baseurl: /nix-review-tools-reports
-url: https://malob.github.io
-github_username: malob
+url: https://nickcao.github.io
+github_username: NickCao
 
 markdown: kramdown
 # theme: minima
