@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    nix-review-tools = { url = "github:malob/nix-review-tools/improve-reports"; flake = false; };
+    nix-review-tools = { url = "github:NickCao/nix-review-tools/improve-reports"; flake = false; };
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs";
     devshell.inputs.flake-utils.follows = "flake-utils";
@@ -19,7 +19,7 @@
           name = "jobset-latest-successful-eval-id";
           runtimeInputs = attrValues { inherit (pkgs) curl jq; };
           text = ''
-            curl -s -L -H 'Accept: application/json' https://hydra.nixos.org/jobset/"$1"/"$2"/latest-eval \
+            curl -s -L -H 'Accept: application/json' https://hydra.nichi.co/jobset/"$1"/"$2"/latest-eval \
             | jq .id
           '';
         };
@@ -28,7 +28,7 @@
           name = "jobset-latest-eval-id";
           runtimeInputs = attrValues { inherit (pkgs) curl jq; };
           text = ''
-            curl -s -H 'Accept: application/json' https://hydra.nixos.org/jobset/"$1"/"$2"/evals \
+            curl -s -H 'Accept: application/json' https://hydra.nichi.co/jobset/"$1"/"$2"/evals \
             | jq .evals[0].id
           '';
         };
@@ -37,7 +37,7 @@
           name = "jobset-eval-date";
           runtimeInputs = attrValues { inherit (pkgs) coreutils curl findutils jq; };
           text = ''
-            curl -s -H 'Accept: application/json' https://hydra.nixos.org/eval/"$1" \
+            curl -s -H 'Accept: application/json' https://hydra.nichi.co/eval/"$1" \
             | jq .timestamp \
             | xargs -I _ date -Idate -d @_
           '';
