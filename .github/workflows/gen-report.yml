@@ -44,14 +44,6 @@ jobs:
         extra_nix_config: |
           access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
 
-    # Use Cachix to cache builds of script etc. from this repo. This speeds up the runtime of this
-    # workflow a little bit.
-    - name: Setup Cachix
-      uses: cachix/cachix-action@v11
-      with:
-        name: malo
-        signingKey: ${{ secrets.CACHIX_SIGNING_KEY }}
-
     # This steps creates outputs that we reference when using the `cache` action in the next steps.
     # Outputs:
     # * eval-id: the ID of the jobset evaluation we are generating the report for.
