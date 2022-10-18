@@ -278,7 +278,8 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  kramdown-parser-gfm
+  jekyll-default-layout
+  minima (~> 2.5)
 
 BUNDLED WITH
    2.1.4

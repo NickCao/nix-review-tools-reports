@@ -1,19 +1,14 @@
 title: Nix Review Tools Reports
-description: >-
-  Automatically generated reports for Hydra jobsets using `nix-review-tools`.
-  Updated hourly.
+description: Automatically generated reports for Hydra jobsets using `nix-review-tools`
 baseurl: /nix-review-tools-reports
 url: https://nickcao.github.io
-github_username: NickCao
+permalink: none
 
 markdown: kramdown
-# theme: minima
-permalink: none
+theme: minima
+
 plugins:
   - jekyll-default-layout
-  - jekill-remote-theme
-
-remote_theme: jekyll/minima
 
 exclude:
   - Gemfile
