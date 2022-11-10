@@ -10,9 +10,8 @@ on:
     - .github/workflows/gen-report.yml
     - .github/workflows/gen-reports.yml
 
-  # Run hourly.
   schedule:
-   - cron: '0 */1 * * *'
+   - cron: '0 */4 * * *'
 
 jobs:
   nixpkgs-riscv:
